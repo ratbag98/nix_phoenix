@@ -15,8 +15,8 @@ numbers in `flake.nix` are what you need, then:
 rm -rf .git
 direnv allow
 pg_ctl -D ./postgres -l logfile start
-
 ```
+
 You can now create an Elixir project inside the `new_project_dir`:
 
 ```bash
@@ -43,3 +43,19 @@ postgres/
 
 Suggest you then make `new_app` or `new_phoenix_app` into a git repository (ie
 keep all this stuff out of the project repo).
+
+## Postgres control
+
+You'll need to stop the postgres manually. Make sure you're in a subdirectory
+of the `new_project_dir` and then:
+
+```bash
+pg_ctl stop
+```
+
+Next time start the server as above:
+
+```bash
+cd new_project_dir
+pg_ctl -D ./postgres -l logfile start
+```
