@@ -2,7 +2,7 @@
   description = "A flake for building development environment of Phoenix project.";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/master";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     flake-utils.url = "github:numtide/flake-utils";
   };
 
@@ -16,6 +16,7 @@
           buildInputs = [
             erlang_27
             beam.packages.erlang_27.elixir_1_17
+            elixir-ls
             nodejs_20
             postgresql_16
           ]
